@@ -189,8 +189,62 @@
                 <ul>
                     <li>Device information (device type, operating system version)</li>
                     <li>App usage data (features used, timestamps of actions)</li>
-                    <li>Location data (when you provide it for location-based features)</li>
                     <li>Technical data (IP address, device identifiers) for security and functionality</li>
+                </ul>
+
+                <h3>d. Location Information</h3>
+                <div class="highlight-box">
+                    <p><strong>Important:</strong> We only access your device's GPS location when you explicitly choose
+                        to use the distance filter feature. Location access is <strong>optional</strong> and <strong>not
+                            required</strong> to use the App.</p>
+                </div>
+                <p><strong>When We Access Your Location:</strong></p>
+                <ul>
+                    <li><strong>Only When You Use Distance Filter:</strong> We access your device's GPS location
+                        exclusively when you enable the distance filter feature in the companion search screen</li>
+                    <li><strong>On-Demand Access:</strong> Location permission is requested only at the moment you
+                        activate the distance filter, not when you first open the App</li>
+                    <li><strong>User Control:</strong> You have full control - you can use the App without ever granting
+                        location permission</li>
+                </ul>
+                <p><strong>What Location Data We Collect:</strong></p>
+                <ul>
+                    <li><strong>Your Current GPS Location:</strong> When you enable distance filtering, we temporarily
+                        access your current latitude and longitude coordinates</li>
+                    <li><strong>Event/Activity Locations:</strong> When you create a group or companion request, you
+                        provide the location (city and coordinates) where the activity will take place - this is stored
+                        in our database</li>
+                    <li><strong>Profile Location:</strong> You may optionally provide your city/location in your profile
+                        (this is text-based, not GPS coordinates)</li>
+                </ul>
+                <p><strong>How We Use Location Data:</strong></p>
+                <ul>
+                    <li><strong>Distance Calculations:</strong> We use your current GPS location to calculate the
+                        distance between you and nearby companions/activities</li>
+                    <li><strong>Filtering Results:</strong> We filter companion search results to show only those within
+                        your specified maximum distance (in kilometers)</li>
+                    <li><strong>Finding Nearby Activities:</strong> We help you discover sports, food, and travel
+                        companions who are geographically close to you</li>
+                </ul>
+                <p><strong>Location Data Storage:</strong></p>
+                <ul>
+                    <li><strong>Your GPS Location:</strong> We do <strong>NOT</strong> store your current GPS location
+                        permanently. It is used only temporarily for distance calculations and is immediately discarded
+                        after use</li>
+                    <li><strong>Event Locations:</strong> The locations where activities/events will take place
+                        (provided by users when creating groups) are stored in Firebase. These are public event
+                        locations, not personal user locations</li>
+                    <li><strong>No Continuous Tracking:</strong> We do not track your location continuously or in the
+                        background. Location is accessed only when you actively use the distance filter</li>
+                </ul>
+                <p><strong>Location Permissions:</strong></p>
+                <ul>
+                    <li><strong>Permission Type:</strong> We request "When In Use" location permission (not "Always"
+                        permission)</li>
+                    <li><strong>Permission Control:</strong> You can grant or deny location permission at any time
+                        through your device settings</li>
+                    <li><strong>No Permission Required:</strong> The App functions fully without location permission -
+                        you can search by city, activity type, and other filters without using GPS location</li>
                 </ul>
             </div>
 
@@ -207,6 +261,9 @@
                     <li><strong>Security:</strong> Verify your identity through selfie verification, prevent fraud and
                         unauthorized access, and maintain App security</li>
                     <li><strong>Communication:</strong> Enable in-app messaging and notifications</li>
+                    <li><strong>Location-Based Features:</strong> When you enable distance filtering, we use your GPS
+                        location to calculate distances and show nearby companions/activities. Your current location is
+                        used temporarily and not stored</li>
                     <li><strong>Service Improvement:</strong> Analyze usage patterns to improve App functionality and
                         user experience</li>
                     <li><strong>Legal Compliance:</strong> Comply with applicable laws, regulations, and legal
@@ -215,7 +272,101 @@
             </div>
 
             <div class="section">
-                <h2>4. Data Sharing & Disclosure</h2>
+                <h2>4. Location Services & Privacy</h2>
+                <p>This section provides detailed information about how we handle location data, which is a sensitive
+                    type of personal information.</p>
+
+                <h3>a. When Location is Accessed</h3>
+                <p>We access your device's GPS location <strong>only</strong> in the following specific scenario:</p>
+                <ul>
+                    <li><strong>Distance Filter Feature:</strong> When you are browsing companions (sports, food, or
+                        travel) and you choose to enable the distance filter by setting a maximum distance (e.g., "Show
+                        companions within 5 km")</li>
+                    <li><strong>One-Time Access:</strong> Each time you use the distance filter, we request your current
+                        location once to perform the distance calculation</li>
+                    <li><strong>Not on App Launch:</strong> We do not access your location when you first open the App
+                        or when you browse companions without using the distance filter</li>
+                    <li><strong>Not in Background:</strong> We never access your location when the App is running in the
+                        background or when you're not actively using the distance filter</li>
+                </ul>
+
+                <h3>b. How Location is Accessed</h3>
+                <p>When you enable the distance filter:</p>
+                <ol style="margin-left: 20px; margin-bottom: 15px;">
+                    <li>You set a maximum distance (e.g., 5 km, 10 km, 20 km) in the companion search screen</li>
+                    <li>The App requests "When In Use" location permission (if not already granted)</li>
+                    <li>If you grant permission, we use the Geolocator service to get your current GPS coordinates
+                        (latitude and longitude) with high accuracy</li>
+                    <li>We calculate the distance between your location and each companion/activity location</li>
+                    <li>We filter the results to show only companions within your specified distance</li>
+                    <li>Your current GPS location is immediately discarded after the calculation - it is not stored</li>
+                </ol>
+
+                <h3>c. What Happens If You Deny Location Permission</h3>
+                <p>If you deny location permission or if location services are disabled:</p>
+                <ul>
+                    <li>The App continues to function normally</li>
+                    <li>You can still search for companions using other filters (city, activity type, gender, age, date)
+                    </li>
+                    <li>The distance filter will simply show all results without distance-based filtering</li>
+                    <li>You can still create groups, join activities, and use all other App features</li>
+                </ul>
+
+                <h3>d. Location Data We Store</h3>
+                <p><strong>We DO Store:</strong></p>
+                <ul>
+                    <li><strong>Event/Activity Locations:</strong> When users create a group or companion request, they
+                        provide the location (city name and GPS coordinates) where the activity will take place. These
+                        are public event locations stored in Firebase and visible to all users searching for companions
+                    </li>
+                    <li><strong>Profile City:</strong> If you choose to add your city/location to your profile, this
+                        text-based information is stored (this is optional and not GPS-based)</li>
+                </ul>
+                <p><strong>We DO NOT Store:</strong></p>
+                <ul>
+                    <li><strong>Your Current GPS Location:</strong> Your real-time GPS coordinates are never stored in
+                        our database</li>
+                    <li><strong>Location History:</strong> We do not track or store your location history or movement
+                        patterns</li>
+                    <li><strong>Background Location:</strong> We never access or store your location when the App is not
+                        actively being used</li>
+                </ul>
+
+                <h3>e. Third-Party Location Services</h3>
+                <p>We use the following services for location functionality:</p>
+                <ul>
+                    <li><strong>Geolocator Package:</strong> We use the Geolocator plugin (Flutter) to access your
+                        device's GPS location. This service only accesses location when explicitly requested by our App
+                    </li>
+                    <li><strong>No Location Sharing:</strong> We do not share your GPS location data with any
+                        third-party advertising or analytics services</li>
+                </ul>
+
+                <h3>f. Your Location Privacy Rights</h3>
+                <p>You have complete control over location access:</p>
+                <ul>
+                    <li><strong>Grant or Deny Permission:</strong> You can grant or deny location permission at any time
+                        through your device settings</li>
+                    <li><strong>Revoke Permission:</strong> You can revoke location permission at any time, and the App
+                        will continue to work (without distance filtering)</li>
+                    <li><strong>Use Without Location:</strong> You can use all App features except distance-based
+                        filtering without granting location permission</li>
+                    <li><strong>No Impact on Account:</strong> Denying location permission does not affect your account,
+                        profile, or ability to use the App</li>
+                </ul>
+
+                <h3>g. Location Data in Account Deletion</h3>
+                <p>When you delete your account:</p>
+                <ul>
+                    <li>Any event/activity locations you provided when creating groups are deleted along with those
+                        groups</li>
+                    <li>Your profile city/location (if provided) is deleted</li>
+                    <li>Since we don't store your GPS location, there is no GPS location data to delete</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>5. Data Sharing & Disclosure</h2>
                 <p>We do not sell, trade, or rent your personal information to third parties for marketing purposes.
                     Your data is only shared in the following limited circumstances:</p>
                 <ul>
@@ -235,7 +386,7 @@
             </div>
 
             <div class="section">
-                <h2>5. Data Security</h2>
+                <h2>6. Data Security</h2>
                 <p>We implement industry-standard security measures to protect your personal information:</p>
                 <ul>
                     <li><strong>Authentication:</strong> Passwords are securely hashed using Firebase Authentication and
@@ -257,7 +408,7 @@
             </div>
 
             <div class="section">
-                <h2>6. Your Data Rights & Account Deletion</h2>
+                <h2>7. Your Data Rights & Account Deletion</h2>
                 <p>You have the following rights regarding your personal information:</p>
 
                 <h3>a. Access and Update</h3>
@@ -325,7 +476,7 @@
             </div>
 
             <div class="section">
-                <h2>7. Data Retention</h2>
+                <h2>8. Data Retention</h2>
                 <p>We retain your personal information only for as long as necessary to provide our services and fulfill
                     the purposes outlined in this Privacy Policy:</p>
                 <ul>
@@ -342,7 +493,7 @@
             </div>
 
             <div class="section">
-                <h2>8. Third-Party Services</h2>
+                <h2>9. Third-Party Services</h2>
                 <p>Our App uses the following third-party services:</p>
                 <ul>
                     <li><strong>Firebase (Google):</strong> For authentication, database storage, and backend services.
@@ -355,7 +506,7 @@
             </div>
 
             <div class="section">
-                <h2>9. Children's Privacy</h2>
+                <h2>10. Children's Privacy</h2>
                 <p>Our App is not intended for children under the age of 18. We do not knowingly collect personal
                     information from children under 18. If you are a parent or guardian and believe your child has
                     provided us with personal information, please contact us immediately. If we become aware that we
@@ -364,7 +515,7 @@
             </div>
 
             <div class="section">
-                <h2>10. International Data Transfers</h2>
+                <h2>11. International Data Transfers</h2>
                 <p>Your information may be transferred to and processed in countries other than your country of
                     residence. These countries may have data protection laws that differ from those in your country. By
                     using our App, you consent to the transfer of your information to these countries. We take
@@ -372,7 +523,7 @@
             </div>
 
             <div class="section">
-                <h2>11. Changes to This Privacy Policy</h2>
+                <h2>12. Changes to This Privacy Policy</h2>
                 <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technology,
                     legal requirements, or for other reasons. We will notify you of any material changes by:</p>
                 <ul>
@@ -385,13 +536,13 @@
             </div>
 
             <div class="section">
-                <h2>12. Your Consent</h2>
+                <h2>13. Your Consent</h2>
                 <p>By using our App, you consent to our Privacy Policy and agree to its terms. If you do not agree with
                     this policy, please do not use our App.</p>
             </div>
 
             <div class="section">
-                <h2>13. Contact Us</h2>
+                <h2>14. Contact Us</h2>
                 <div class="contact-info">
                     <p>If you have any questions, concerns, or requests regarding this Privacy Policy, your personal
                         data, or your account, please contact us at:</p>
